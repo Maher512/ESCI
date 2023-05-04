@@ -30,7 +30,7 @@ json_rt=$(aws ec2 create-route-table --vpc-id $extracted_data_vpc)
 extracted_data_rt=$(echo "$json_rt" | jq -r '.RouteTable.RouteTableId')
 
 # Create a route to the Internet Gateway
-aws ec2 create-route --route-table-id $extracted_data_rt --destination-cidr-block
+aws ec2 create-route --route-table-id $extracted_data_rt --destination-cidr-block 0.0.0.0/0 --gateway-id $extracted_data_igw
 
 # Evaluate the state of the route table to ensure it has been created
 aws ec2 describe-route-tables --route-table-id $extracted_data_rt
@@ -69,7 +69,3 @@ aws ec2 describe-instances --instance-ids $extracted_data_insid --query 'Reserva
 
 # SSH into the instance
 ssh -i MyKeyPair.pem ec2-user@<public-ip-address>
-
-
-
-
