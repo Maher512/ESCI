@@ -41,6 +41,7 @@ aws ec2 associate-route-table  --subnet-id $extracted_data_subnet1 --route-table
 # Configure the subnet to issue a public IP address to EC2 instances
 aws ec2 modify-subnet-attribute --subnet-id $extracted_data_subnet1 --map-public-ip-on-launch
 
+
 ##### COMMANDS BELOW LAUNCH AN EC2 INSTANCE INTO THE SUBNET FOR TESTING #####
 
 # Create a key pair and output to MyKeyPair.pem
