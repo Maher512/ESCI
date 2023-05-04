@@ -7,14 +7,13 @@ json_vpc=$(aws ec2 create-vpc --cidr-block 10.11.0.0/16)
 extracted_data_vpc=$(echo "$json_vpc" | jq -r '.Vpc.VpcId')
 
 # Create two subnets
-json_subnet1= $(aws ec2 create-subnet --vpc-id $extracted_data_vpc --cidr-block 10.11.1.0/24)
+aws ec2 create-subnet --vpc-id $extracted_data_vpc --cidr-block 10.11.1.0/24
 
-#json_subnet2= $(aws ec2 create-subnet --vpc-id $extracted_data_vpc --cidr-block 10.11.2.0/24)
+aws ec2 create-subnet --vpc-id $extracted_data_vpc --cidr-block 10.11.2.0/24
 
-# Extract the subnet ID using jq
-extracted_data_subnet1=$(echo "$json_subnet1" | jq -r '.Subnet.SubnetId')
-
-#extracted_data_subnet2=$(echo "$json_subnet2" | jq -r '.Subnet.SubnetId')
+# # Extract the subnet ID using jq
+# extracted_data_subnet1=$(echo "$json_subnet1" | jq -r '.Subnet.SubnetId')
+# extracted_data_subnet2=$(echo "$json_subnet2" | jq -r '.Subnet.SubnetId')
 
 # Create an Internet Gateway
 json_igw=$(aws ec2 create-internet-gateway)
@@ -36,6 +35,12 @@ aws ec2 create-route --route-table-id $extracted_data_rt --destination-cidr-bloc
 
 # Evaluate the state of the route table to ensure it has been created
 aws ec2 describe-route-tables --route-table-id $extracted_data_rt
+
+# Retrieve subnet IDs
+json_subnets=$(aws ec2 describe-subnets --filters "Name=vpc-id,Values=$extracted_data_vpc" --query 'Subnets[*].{ID:SubnetId,CIDR:CidrBlock}')
+
+# Extract the subnet IDs using jq
+extracted_data_subnet1=$(echo "$json_subnets" | jq -r '.[0].ID')
 
 # Associate the desired subnet with a custom route table to make it public
 aws ec2 associate-route-table  --subnet-id $extracted_data_subnet1 --route-table-id $extracted_data_rt
