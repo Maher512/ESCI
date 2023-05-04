@@ -75,11 +75,11 @@ extracted_data_insid=$(echo "$json_insid" | jq -r '.Groups[].Instances[].Instanc
 # aws ec2 describe-instances --instance-ids $extracted_data_insid --query 'Reservations[].Instances[].PublicIpAddress' --output text
 
 #Check the state of the instance
-json_IP=$(aws ec2 describe-instances --instance-id $extracted_data_insid)
+json_IP=$(aws ec2 describe-instances --instance-ids $extracted_data_insid)
 
 # Get the public IP address of the instance
 extracted_data_IP=$(echo "$json_IP" | jq -r '.Reservations[].Instances[].PublicIpAddress')
 
 # SSH into the instance
-ssh -i PciKeys.pem ec2-user@<public-ip-address>
+ssh -i PciKeys.pem ec2-user@<$extracted_data_IP>
 
