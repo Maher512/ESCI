@@ -71,8 +71,14 @@ json_insid=$(aws ec2 run-instances --image-id ami-02396cdd13e9a1257 --count 1 --
 # Get instance ID of the EC2 instance via jq
 extracted_data_insid=$(echo "$json_insid" | jq -r '.Groups[].Instances[].InstanceId')
 
-# Check the state of the instance and Get the public IP address of the instance
-aws ec2 describe-instances --instance-ids $extracted_data_insid --query 'Reservations[].Instances[].PublicIpAddress' --output text
+# # Check the state of the instance and Get the public IP address of the instance
+# aws ec2 describe-instances --instance-ids $extracted_data_insid --query 'Reservations[].Instances[].PublicIpAddress' --output text
+
+#Check the state of the instance
+json_IP=$(aws ec2 describe-instances --instance-id $extracted_data_insid)
+
+# Get the public IP address of the instance
+extracted_data_IP=$(echo "$json_IP" | jq -r '.Reservations[].Instances[].PublicIpAddress')
 
 # SSH into the instance
 ssh -i PciKeys.pem ec2-user@<public-ip-address>
