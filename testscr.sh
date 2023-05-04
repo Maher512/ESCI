@@ -69,11 +69,11 @@ aws ec2 authorize-security-group-ingress --group-id $extracted_data_sg --protoco
 json_insid=$(aws ec2 run-instances --image-id ami-02396cdd13e9a1257 --count 1 --instance-type t2.micro --key-name PciKeys --security-group-ids $extracted_data_sg --subnet-id $extracted_data_subnet1)
 
 # Get instance ID of the EC2 instance via jq
-extracted_data_insid=$(echo "$json_insid" | jq -r '.InstanceId')
+extracted_data_insid=$(echo "$json_insid" | jq -r '.Groups[].Instances[].InstanceId')
 
 # Check the state of the instance and Get the public IP address of the instance
 aws ec2 describe-instances --instance-ids $extracted_data_insid --query 'Reservations[].Instances[].PublicIpAddress' --output text
 
 # SSH into the instance
-ssh -i MyKeyPair.pem ec2-user@<public-ip-address>
+ssh -i PciKeys.pem ec2-user@<public-ip-address>
 
