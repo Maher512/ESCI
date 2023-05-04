@@ -39,35 +39,3 @@ aws ec2 wait instance-running --instance-ids $INSTANCE_ID
 PUBLIC_IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
 
 echo "EC2 instance has been deployed with ID: $INSTANCE_ID and public IP: $PUBLIC_IP"
-
-
-
-
-
-##### COMMANDS BELOW LAUNCH AN EC2 INSTANCE INTO THE SUBNET FOR TESTING #####
-
-# Create a key pair and output to MyKeyPair.pem
-aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > ./MyKeyPair.pem
-
-chmod 400 MyKeyPair.pem
-
-# Create a security group with a rule to allow ssh access
-json_sg=$(aws ec2 create-security-group --group-name MySecurityGroup --description "My security group" --vpc-id $extracted_data_vpc)
-
-# Extract the Security Group ID using jq
-extracted_data_sg=$(echo "$json_sg" | jq -r '.GroupId')
-
-# Add a rule to the security group to allow ssh access
-aws ec2 authorize-security-group-ingress --group-id $extracted_data_sg --protocol tcp --port 22 --cidr 0.0.0.0/0
-
-# Launch an EC2 instance into the subnet
-json_insid=$(aws ec2 run-instances --image-id ami-02396cdd13e9a1257 --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids $extracted_data_sg --subnet-id $extracted_data_subnet1)
-
-# Get instance ID of the EC2 instance via jq
-extracted_data_insid=$(echo "$json_insid" | jq -r '.InstanceId')
-
-# Check the state of the instance and Get the public IP address of the instance
-aws ec2 describe-instances --instance-ids $extracted_data_insid --query 'Reservations[].Instances[].PublicIpAddress' --output text
-
-# SSH into the instance
-ssh -i MyKeyPair.pem ec2-user@<public-ip-address>
