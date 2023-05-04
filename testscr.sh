@@ -7,3 +7,4 @@ json_output=$(aws ec2 create-vpc --cidr-block 10.11.0.0/16)
 extracted_data=$(echo "$json_output" | jq -r '.Vpc.VpcId')
 
 aws ec2 create-subnet --vpc-id $extracted_data --cidr-block 10.11.1.0/24
+aws ec2 create-subnet --vpc-id $extracted_data --cidr-block 10.11.2.0/24
