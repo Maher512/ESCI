@@ -81,5 +81,5 @@ json_IP=$(aws ec2 describe-instances --instance-ids $extracted_data_insid)
 extracted_data_IP=$(echo "$json_IP" | jq -r '.Reservations[].Instances[].PublicIpAddress')
 
 # SSH into the instance
-ssh -i PciKeys.pem ec2-user@<$extracted_data_IP>
+ssh -i PciKeys.pem ec2-user@$extracted_data_IP
 
