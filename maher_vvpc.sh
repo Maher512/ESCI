@@ -80,5 +80,3 @@ aws ec2 describe-instances --instance-id i-06aad54be737448dc
 ## Connect to instance using key pair and public IP
 
 ssh -i MyKeyPair.pem ec2-user@54.197.9.72
-
-
