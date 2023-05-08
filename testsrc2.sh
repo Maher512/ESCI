@@ -39,3 +39,4 @@ aws ec2 wait instance-running --instance-ids $INSTANCE_ID
 PUBLIC_IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
 
 echo "EC2 instance has been deployed with ID: $INSTANCE_ID and public IP: $PUBLIC_IP"
+
