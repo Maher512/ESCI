@@ -25,6 +25,7 @@
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![JQ][JQ.com]][JQ-url]
 
 ### Prerequisites
 
@@ -98,3 +99,5 @@ Project Link: https://github.com/Maher512/ESCI
 [Laravel-url]: https://laravel.com
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
+[JQ.com]: https://stedolan.github.io/jq/
+[JQ-url]: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTww5W-PRbjsEgYxGUhZyGA9YlHx4cSD7fU8Q&usqp=CAU
