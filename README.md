@@ -74,7 +74,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 Mohamed H. Maher - mohamed.maher@tkh.edu.eg
 
-Project Link: https://github.com/Maher512/ESCI
+Linkedin: (https://www.linkedin.com/in/mohamed-maher-a3a133240/)
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
