@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="Images/logo final.png" alt="Logo" width="500" height="500">
+    <img src="Images/logo final white.png" alt="Logo" width="500" height="500">
   </a>
 
 <h3 align="center">The One Stop Guide to an ESCI (Efficent Secure & Complete Infrastructure)</h3>
@@ -14,7 +14,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 The One Stop Guide to an ESCI is all about creating an efficent, secure, and complete infrastrucutre for fintech startups all at the touch of a button. The goal reason behind this project is finding an automated solution for the challenges faced by fintech startups regarding cybersecurity and infrastructure issues. 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 ### Built With
 ![image](https://github.com/Maher512/ESCI/assets/74532750/5c0251d7-d12d-4a80-9522-abec9f27ac2c)
@@ -53,15 +52,20 @@ The only thing you need to have to use this product is to create an account to u
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+After follwing the steps this is the topology of your created infrastructure with role-based access control implemented to protect and harden:
+![Screenshot_4](https://github.com/Maher512/ESCI/assets/74532750/dbca6c34-f5c1-4c6f-8cb5-34156b7771fe)
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Feature 1
-- [x] Feature 2
-- [x] Feature 3
-    - [ ] Nested Feature
+- [x] Built and Maintained a Secure Network
+- [x] Protected Sensitive Data
+- [x] Implemented Strong Role Based Access Control Measures 
+    - [x] VPC Created
+    - [x] Subnets Created and Configured
+    - [x] Route Tables Customized 
+    - [x] SSH Security Group Implemented
+    - [x] Launched EC2 Intances
 
 
 <!-- CONTACT -->
