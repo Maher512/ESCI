@@ -52,8 +52,12 @@ The only thing you need to have to use this product is to create an account to u
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-After follwing the steps this is the topology of your created infrastructure with role-based access control implemented to protect and harden:
+After following the steps this is the topology of your created infrastructure with role-based access control implemented to protect and harden the systems: 
+<br>
 ![Screenshot_4](https://github.com/Maher512/ESCI/assets/74532750/dbca6c34-f5c1-4c6f-8cb5-34156b7771fe)
+<br>
+Also, displayed below will be the resource map that visulizes the script results:
+![Resource Map](https://github.com/Maher512/ESCI/assets/74532750/2f385b1f-aec2-4c38-8850-e991fb03e5c6)
 
 <!-- ROADMAP -->
 ## Roadmap
