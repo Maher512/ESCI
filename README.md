@@ -42,11 +42,11 @@ The only thing you need to have to use this product is to create an account to u
    ```
 3. Execute the infrastructure creation script
    ```sh
-   bash Infa_Creation.sh 
+   bash Infra_Creation.sh 
    ```
 4. Execute the roles and policy creation script
    ```sh
-   bash ac_creation.sh 
+   bash rolecreation.sh 
    ```
 
 <!-- USAGE EXAMPLES -->
