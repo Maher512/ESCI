@@ -13,19 +13,14 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+The One Stop Guide to an ESCI is all about creating an efficent, secure, and complete infrastrucutre for fintech startups all at the touch of a button.
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 ### Built With
+![image](https://github.com/Maher512/ESCI/assets/74532750/5c0251d7-d12d-4a80-9522-abec9f27ac2c)
+![image](https://github.com/Maher512/ESCI/assets/74532750/fa33508d-eb89-44ae-a9ca-d2bd6e8a0df5)
+![image](https://github.com/Maher512/ESCI/assets/74532750/0c7b8462-50d3-4bf2-9932-c95b33f5981d)
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQ][JQ.com]][JQ-url]
 
 ### Prerequisites
 
@@ -82,22 +77,3 @@ Linkedin: (https://www.linkedin.com/in/mohamed-maher-a3a133240/)
 * [Dr. Haitham Ghalwash](http://www.linkedin.com/in/ghalwash)
 * [Dr. Ahmed Taha]()
 * [AL. Mohamed Ibrahim]()
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQ.com]: https://stedolan.github.io/jq/
-[JQ-url]: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTww5W-PRbjsEgYxGUhZyGA9YlHx4cSD7fU8Q&usqp=CAU
