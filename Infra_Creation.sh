@@ -80,7 +80,4 @@ json_IP=$(aws ec2 describe-instances --instance-ids $extracted_data_insid)
 # Get the public IP address of the instance
 extracted_data_IP=$(echo "$json_IP" | jq -r '.Reservations[].Instances[].PublicIpAddress')
 
-# # SSH into the instance
-# ssh -i SPair.pem ec2-user@$extracted_data_IP
-
 echo "Script complete"
