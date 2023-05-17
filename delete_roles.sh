@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROLE_NAME="Administartor"
+ROLE_NAME="Administrtor"
 
 # Detach all policies from the role
 for policy in $(aws iam list-attached-role-policies --role-name $ROLE_NAME --query 'AttachedPolicies[].PolicyArn' --output text)
