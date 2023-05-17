@@ -51,10 +51,10 @@ aws ec2 modify-subnet-attribute --subnet-id $extracted_data_subnet1 --map-public
 
 ##### COMMANDS BELOW LAUNCH AN EC2 INSTANCE INTO THE SUBNET FOR TESTING #####
 
-# Create a key pair and output to SPair.pem
-aws ec2 create-key-pair --key-name SPair.pem --query 'KeyMaterial' --output text > SPair.pem
+# Create a key pair and output to SSPair.pem
+aws ec2 create-key-pair --key-name SSPair.pem --query 'KeyMaterial' --output text > SSPair.pem
 
-chmod 400 SPair.pem
+chmod 400 SSPair.pem
 
 # Create a security group with a rule to allow ssh access
 json_sg=$(aws ec2 create-security-group --group-name FinSecurityGroup --description "Fintech 1.0 security group" --vpc-id $extracted_data_vpc)
@@ -66,7 +66,7 @@ extracted_data_sg=$(echo "$json_sg" | jq -r '.GroupId')
 aws ec2 authorize-security-group-ingress --group-id $extracted_data_sg --protocol tcp --port 22 --cidr 0.0.0.0/0
 
 # Launch an EC2 instance into the subnet
-json_insid=$(aws ec2 run-instances --image-id ami-02396cdd13e9a1257 --count 1 --instance-type t2.micro --key-name SPair.pem --security-group-ids $extracted_data_sg --subnet-id $extracted_data_subnet1)
+json_insid=$(aws ec2 run-instances --image-id ami-02396cdd13e9a1257 --count 1 --instance-type t2.micro --key-name SSPair.pem --security-group-ids $extracted_data_sg --subnet-id $extracted_data_subnet1)
 
 # Get instance ID of the EC2 instance via jq
 extracted_data_insid=$(echo "$json_insid" | jq -r '.Groups[].Instances[].InstanceId')
