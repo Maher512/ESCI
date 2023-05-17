@@ -8,14 +8,14 @@ aws iam put-role-policy --role-name Admin --policy-name AdminPolicy --policy-doc
 
 echo "Created an Admin Role"
 
-sleep 2
+# sleep 2
 
-echo "Creating an S3 Bucket and attaching it to a normal user role with limited permissions"
+# echo "Creating an S3 Bucket and attaching it to a normal user role with limited permissions"
 
-aws s3 mb s3://maher123-cli-bucket
+# aws s3 mb s3://maher123-cli-bucket
 
-echo "Created an S3 Bucket now creating the normal user role"
+# echo "Created an S3 Bucket now creating the normal user role"
 
-aws iam create-role --role-name Norm-User --assume-role-policy-document file://s3bucket_read_only.json
+# aws iam create-role --role-name NormUser --assume-role-policy-document file://s3bucket_read_only.json
 
-aws iam put-role-policy --role-name Norm-User --policy-name NormUserPolicy --policy-document file://ec2-ronly.json
+# aws iam put-role-policy --role-name NormUser --policy-name NormUserPolicy --policy-document file://ec2-ronly.json
