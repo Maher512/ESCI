@@ -8,7 +8,7 @@
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::maher-cli-bucket"
+                "arn:aws:s3:::maher123-cli-bucket"
             ]
         }
     ]
