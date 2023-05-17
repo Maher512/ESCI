@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="Images/logo final.png" alt="Logo" width="500" height="500">
   </a>
 
 <h3 align="center">The One Stop Guide to an ESCI (Efficent Secure & Complete Infrastructure)</h3>
@@ -13,7 +13,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The One Stop Guide to an ESCI is all about creating an efficent, secure, and complete infrastrucutre for fintech startups all at the touch of a button.
+The One Stop Guide to an ESCI is all about creating an efficent, secure, and complete infrastrucutre for fintech startups all at the touch of a button. The goal reason behind this project is finding an automated solution for the challenges faced by fintech startups regarding cybersecurity and infrastructure issues. 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 ### Built With
@@ -58,9 +58,9 @@ Use this space to show useful examples of how a project can be used. Additional 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
+- [x] Feature 1
+- [x] Feature 2
+- [x] Feature 3
     - [ ] Nested Feature
 
 
